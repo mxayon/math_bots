@@ -56,7 +56,7 @@ def calculator():
         elif recalc == 'N':
             print('Leaving Mini-Calc Bot.. Come back for more mini functions!')
         else:
-            print('Use Y for yes or N to exit')
+            print('Leaving Mini-Calc Bot.. Come back for more mini functions!')
     recalculate()
 
 def welcome():
