@@ -18,29 +18,51 @@ def multiply(num1, num2):
 def divide(num1, num2):
     return num1 / num2
 
-print("MiniCalc Bot at your service.. Please enter a command -\n"
-        "a = add\n" \
-        "s = subtract\n" \
-        "m = multiply\n" \
-        "d = divide\n")
+def calculator():
+    # Take input from the user
+    operation = input('''
+    Type in the math operator you wish Calc Bot to implement..
+    + for addition
+    - for subtraction
+    * for multiplication
+    / for division
+    ''')
 
-# Take input from the user
-select = input("Select operations from a, s, m, d:")
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
 
-num1 = int(input("Enter first number: "))
-num2 = int(input("Enter second number: "))
+    if operation == '+':
+        print(num1, "+", num2, "=",
+                    add(num1, num2))
+    elif operation == '-':
+        print(num1, "-", num2, "=",
+                    subtract(num1, num2))
+    elif operation == '*':
+        print(num1, "x", num2, "=",
+                    multiply(num1, num2))
+    elif operation == 'd':
+        print(num1, "/", num2, "=",
+                    divide(num1, num2))
+    else:
+        print("Cannot compute. Please use a for addition, s for subtraction, m for multiplication, or d for division")
 
-if select == 'a':
-    print(num1, "+", num2, "=",
-                add(num1, num2))
-elif select == 's':
-    print(num1, "-", num2, "=",
-                subtract(num1, num2))
-elif select == 'm':
-    print(num1, "x", num2, "=",
-                multiply(num1, num2))
-elif select == 'd':
-    print(num1, "/", num2, "=",
-                divide(num1, num2))
-else:
-    print("Cannot compute. Please use a for addition, s for subtraction, m for multiplication, or d for division")
+    def recalculate():
+        recalc = input('''
+        Let calc-bot know if you would like me to process numbers again!
+        Just use Y for yes and N for no
+        ''')
+        if recalc == 'Y':
+            calculator()
+        elif recalc == 'N':
+            print('Leaving Mini-Calc Bot.. Come back for more mini functions!')
+        else:
+            print('Use Y for yes or N to exit')
+    recalculate()
+
+def welcome():
+    print('''
+    Hello, I am Calc-bot, here for all your mini math operations and needs.
+    ''')
+
+welcome()
+calculator()
