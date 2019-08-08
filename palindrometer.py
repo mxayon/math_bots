@@ -12,7 +12,7 @@ def isPalindrome(str):
         return True
     return False
 
-str = "maxexam"
+str = input('Please Enter what you think may be a palindrome')
 answer = isPalindrome(str)
 
 if (answer):
