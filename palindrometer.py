@@ -13,6 +13,7 @@ def isPalindrome(str):
     return False
 
 str = input('Please Enter what you think may be a palindrome')
+str = str.casefold()
 answer = isPalindrome(str)
 
 if (answer):
